@@ -1,6 +1,6 @@
 import argparse
 
-
+# Функция записи данных с файла в массивы
 def parse_file(file_path):
     with open(file_path, "r") as f:
         lines = f.readlines()
@@ -17,7 +17,7 @@ def parse_file(file_path):
     current_block = 1
 
     for line in lines:
-        if not line:  # Если строка пустая
+        if not line:  
             current_block += 1
             continue
 
@@ -33,7 +33,7 @@ def parse_file(file_path):
 
     return array_1, array_2, array_3
 
-
+# Функция для установки значений атрибутов узлов в соответствии с правилами
 def process_vertex_values(
     array_1, array_2, array_3, array_of_vertex_from, value_of_vertex, value_of_edge
 ):
@@ -51,7 +51,7 @@ def process_vertex_values(
         else:
             value_of_vertex[i] = float(array_3[i])
 
-
+# Функция для установки значений атрибутов ребер в соответствии с правилами
 def process_edge_values(
     array_1,
     array_2,
